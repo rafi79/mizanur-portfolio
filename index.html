@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD Mizanur Rahman - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #000;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #000 0%, #333 100%);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 1px,
+                rgba(255,255,255,0.03) 1px,
+                rgba(255,255,255,0.03) 20px
+            );
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateX(-100px) translateY(-100px); }
+            100% { transform: translateX(100px) translateY(100px); }
+        }
+
+        .profile-section {
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            margin: 0 auto 30px;
+            background: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            font-weight: bold;
+            box-shadow: 0 0 30px rgba(255,255,255,0.3);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #fff, #ccc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: #ddd;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            padding: 20px;
+            min-width: 120px;
+            background: rgba(255,255,255,0.05);
+            border: 2px solid transparent;
+            border-radius: 20px;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Individual social link colors */
+        .social-link:nth-child(1) {
+            background: linear-gradient(135deg, rgba(106, 90, 205, 0.2), rgba(106, 90, 205, 0.1));
+            border-color: rgba(106, 90, 205, 0.3);
+        }
+
+        .social-link:nth-child(1):hover {
+            background: linear-gradient(135deg, rgba(106, 90, 205, 0.4), rgba(106, 90, 205, 0.2));
+            border-color: rgba(106, 90, 205, 0.8);
+            box-shadow: 0 15px 35px rgba(106, 90, 205, 0.3);
+        }
+
+        .social-link:nth-child(2) {
+            background: linear-gradient(135deg, rgba(32, 162, 255, 0.2), rgba(32, 162, 255, 0.1));
+            border-color: rgba(32, 162, 255, 0.3);
+        }
+
+        .social-link:nth-child(2):hover {
+            background: linear-gradient(135deg, rgba(32, 162, 255, 0.4), rgba(32, 162, 255, 0.2));
+            border-color: rgba(32, 162, 255, 0.8);
+            box-shadow: 0 15px 35px rgba(32, 162, 255, 0.3);
+        }
+
+        .social-link:nth-child(3) {
+            background: linear-gradient(135deg, rgba(66, 133, 244, 0.2), rgba(66, 133, 244, 0.1));
+            border-color: rgba(66, 133, 244, 0.3);
+        }
+
+        .social-link:nth-child(3):hover {
+            background: linear-gradient(135deg, rgba(66, 133, 244, 0.4), rgba(66, 133, 244, 0.2));
+            border-color: rgba(66, 133, 244, 0.8);
+            box-shadow: 0 15px 35px rgba(66, 133, 244, 0.3);
+        }
+
+        .social-link:nth-child(4) {
+            background: linear-gradient(135deg, rgba(0, 119, 181, 0.2), rgba(0, 119, 181, 0.1));
+            border-color: rgba(0, 119, 181, 0.3);
+        }
+
+        .social-link:nth-child(4):hover {
+            background: linear-gradient(135deg, rgba(0, 119, 181, 0.4), rgba(0, 119, 181, 0.2));
+            border-color: rgba(0, 119, 181, 0.8);
+            box-shadow: 0 15px 35px rgba(0, 119, 181, 0.3);
+        }
+
+        .social-link:nth-child(5) {
+            background: linear-gradient(135deg, rgba(255, 87, 34, 0.2), rgba(255, 87, 34, 0.1));
+            border-color: rgba(255, 87, 34, 0.3);
+        }
+
+        .social-link:nth-child(5):hover {
+            background: linear-gradient(135deg, rgba(255, 87, 34, 0.4), rgba(255, 87, 34, 0.2));
+            border-color: rgba(255, 87, 34, 0.8);
+            box-shadow: 0 15px 35px rgba(255, 87, 34, 0.3);
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .social-link:hover::before {
+            left: 100%;
+        }
+
+        .social-link:hover {
+            transform: translateY(-8px) scale(1.05);
+        }
+
+        .social-icon {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        .social-link span:last-child {
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        /* Navigation */
+        nav {
+            background: #111;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.5);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .nav-link:hover::before {
+            left: 100%;
+        }
+
+        .nav-link:hover {
+            background: #333;
+            transform: translateY(-2px);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        section:nth-child(even) {
+            background: #111;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #fff, #666);
+        }
+
+        /* Summary */
+        .summary-content {
+            font-size: 1.1rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #ddd;
+            line-height: 1.8;
+        }
+
+        /* Experience */
+        .experience-item {
+            background: #222;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(180deg, #fff, #666);
+        }
+
+        .experience-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .experience-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .experience-date {
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        .experience-company {
+            color: #aaa;
+            margin-bottom: 15px;
+        }
+
+        .experience-description {
+            color: #ddd;
+        }
+
+        .experience-description ul {
+            margin-left: 20px;
+        }
+
+        .experience-description li {
+            margin-bottom: 8px;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category {
+            background: #222;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-category h3 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            background: #333;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #ddd;
+        }
+
+        /* Education */
+        .education-item {
+            background: #222;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .education-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .education-content p {
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        .education-grade {
+            text-align: right;
+            color: #ddd;
+        }
+
+        /* Projects & Publications */
+        .projects-grid, .publications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-item, .publication-item {
+            background: #222;
+            padding: 25px;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .project-item:hover, .publication-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-item h3, .publication-item h3 {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            color: #fff;
+        }
+
+        .project-item p, .publication-item p {
+            color: #ddd;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .tech-tag {
+            background: #444;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            color: #ccc;
+        }
+
+        /* References */
+        .references-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .reference-item {
+            background: #222;
+            padding: 25px;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+            border-left: 4px solid #666;
+        }
+
+        .reference-item:hover {
+            transform: translateY(-5px);
+            border-left-color: #fff;
+        }
+
+        .reference-header h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .reference-title {
+            color: #ccc;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .reference-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #ddd;
+            font-size: 0.9rem;
+        }
+
+        .contact-icon {
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid #333;
+        }
+
+        .footer-content {
+            text-align: center;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: #888;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            border: 1px solid #333;
+            transition: all 0.4s ease;
+            background: rgba(255,255,255,0.02);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .footer-link:hover::before {
+            left: 100%;
+        }
+
+        .footer-link:hover {
+            color: #fff;
+            border-color: #666;
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-2px);
+        }
+
+        .footer-info {
+            color: #666;
+            margin-top: 20px;
+        }
+
+        .footer-info p {
+            margin: 5px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .social-links {
+                gap: 15px;
+                margin-top: 30px;
+            }
+
+            .social-link {
+                padding: 15px;
+                font-size: 0.8rem;
+                min-width: 100px;
+            }
+
+            .social-icon {
+                font-size: 1.5rem;
+            }
+
+            .nav-container {
+                gap: 20px;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .education-item {
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+            }
+
+            .education-grade {
+                text-align: left;
+                margin-top: 10px;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="profile-section">
+                <div class="profile-image">MR</div>
+                <h1>MD Mizanur Rahman</h1>
+                <p class="subtitle">AI Engineer & Content Creator</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span>📧</span>
+                        <span>rafi79466@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📱</span>
+                        <span>+8801902295909</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <span>Banani, Dhaka, Bangladesh</span>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://github.com/rafi79" target="_blank" class="social-link" title="GitHub Profile">
+                        <span class="social-icon">🐙</span>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://kaggle.com/rafi79" target="_blank" class="social-link" title="Kaggle Profile">
+                        <span class="social-icon">🏆</span>
+                        <span>Kaggle</span>
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=rafi79" target="_blank" class="social-link" title="Google Scholar">
+                        <span class="social-icon">🎓</span>
+                        <span>Scholar</span>
+                    </a>
+                    <a href="https://linkedin.com/in/mizanur-rahman" target="_blank" class="social-link" title="LinkedIn Profile">
+                        <span class="social-icon">💼</span>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://facebook.com/mr.rafi" target="_blank" class="social-link" title="Facebook Profile">
+                        <span class="social-icon">📘</span>
+                        <span>Facebook</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <a href="#summary" class="nav-link">Summary</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#publications" class="nav-link">Publications</a>
+                <a href="#references" class="nav-link">References</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="summary">
+        <div class="container">
+            <h2 class="section-title fade-in">Summary</h2>
+            <div class="summary-content fade-in">
+                <p>I enjoy working in AI. Working at multiple AI startups taught me a lot of things. In the future, I'd like to collaborate more to create new AI stuff. Create Some Stuff for AI Safety. My experience spans across AI engineering, content creation, prompt engineering, and research publications in the field of artificial intelligence and machine learning.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title fade-in">Work Experience</h2>
+            
+            <div class="experience-item fade-in">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">AI Engineer</div>
+                        <div class="experience-company">ROHUM (Remote - Part Time)</div>
+                    </div>
+                    <div class="experience-date">Jan 2025 - Present</div>
+                </div>
+                <div class="experience-description">
+                    <p>Creating 3D AI AVATAR Chatbot using Javascript, Python, Node.js and Generative AI Models.</p>
+                    <p>AI Agent Framework and MCP server familiar</p>
+                </div>
+            </div>
+
+            <div class="experience-item fade-in">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Instructor</div>
+                        <div class="experience-company">BDSKILL (Remote - Part-time)</div>
+                    </div>
+                    <div class="experience-date">May 2025 - June 2025</div>
+                </div>
+                <div class="experience-description">
+                    <p><strong>AI Course:</strong> AI Creation & Automation – From Prompts to Agents For Everyone</p>
+                </div>
+            </div>
+
+            <div class="experience-item fade-in">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Content Creator</div>
+                        <div class="experience-company">Towards AI (Remote - Full Time)</div>
+                    </div>
+                    <div class="experience-date">Nov 2023 - Jan 2025</div>
+                </div>
+                <div class="experience-description">
+                    <ul>
+                        <li>Completed a Generative AI Book Projects (Building LLMs for Production)</li>
+                        <li>Completed AI Development Courses "From Beginner to Advanced LLM Developer"</li>
+                        <li>Analysis of AI Company and AI Products features</li>
+                        <li>Query understanding and prompt engineering</li>
+                        <li>Fine Tuning with Different LLM Models</li>
+                        <li>Data collection, cleaning and preparation Related To AI</li>
+                        <li>Making AI Related Content And Research</li>
+                        <li>Technical Writing and Knowledge of RAG</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item fade-in">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">SEO Strategist</div>
+                        <div class="experience-company">Mindgrasp AI (Remote - Full Time)</div>
+                    </div>
+                    <div class="experience-date">Aug 2023 - May 2024</div>
+                </div>
+                <div class="experience-description">
+                    <ul>
+                        <li>Research About effective AI Related Keywords and create Clusters</li>
+                        <li>Create 7 articles and 10 clusters keywords weekly using Semrush, Mangools etc</li>
+                        <li>Work with Marketing Team in ASANA Project Management</li>
+                        <li>Create new Strategy of SEO for the website</li>
+                        <li>Created Marketing Emails and Mindgrasp GPT in ChatGPT marketplace</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item fade-in">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Prompt Engineer</div>
+                        <div class="experience-company">Graybook AI (Remote - Full Time)</div>
+                    </div>
+                    <div class="experience-date">Aug 2023 - Apr 2024</div>
+                </div>
+                <div class="experience-description">
+                    <ul>
+                        <li>Data Scraping & Analysis: Extracting valuable insights from diverse datasets</li>
+                        <li>AI Content Creation: Utilizing advanced AI tools to craft compelling content</li>
+                        <li>AI Data Analysis & Production: Analyzing AI trends and generating reports</li>
+                        <li>SEO & Keywords Optimization: Conducting in-depth SEO analyses</li>
+                        <li>Social Media Content & Management: Creating targeted content for LinkedIn and Facebook</li>
+                        <li>Community Engagement: Acting as a LinkedIn page moderator</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item fade-in">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Instructor</div>
+                        <div class="experience-company">EPaathshalaBD (Remote - Part-time)</div>
+                    </div>
+                    <div class="experience-date">Feb 2024 - May 2024</div>
+                </div>
+                <div class="experience-description">
+                    <p>Created a full Prompt Engineering Full Course of 8 Module</p>
+                </div>
+            </div>
+
+            <div class="experience-item fade-in">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">AI Niche Writer</div>
+                        <div class="experience-company">Inversal (Remote - Freelance)</div>
+                    </div>
+                    <div class="experience-date">June 2023 - Nov 2023</div>
+                </div>
+                <div class="experience-description">
+                    <p>Created Generative Related AI and Prompt Engineering Related blogs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title fade-in">Education</h2>
+            
+            <div class="education-item fade-in">
+                <div class="education-content">
+                    <h3>Bachelor of Science in Computer Science and Engineering</h3>
+                    <p>Green University of Bangladesh</p>
+                </div>
+                <div class="education-grade">
+                    <strong>Feb 2019 - Feb 2023</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title fade-in">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category fade-in">
+                    <h3>AI & Machine Learning</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">LLMs</span>
+                        <span class="skill-tag">ChatGPT</span>
+                        <span class="skill-tag">Fine-Tuning</span>
+                        <span class="skill-tag">Prompt Engineering</span>
+                        <span class="skill-tag">RAG</span>
+                        <span class="skill-tag">OCR</span>
+                        <span class="skill-tag">Computer Vision</span>
+                    </div>
+                </div>
+                <div class="skill-category fade-in">
+                    <h3>Programming & Development</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">AI Agents</span>
+                        <span class="skill-tag">MCP Server</span>
+                    </div>
+                </div>
+                <div class="skill-category fade-in">
+                    <h3>Content & Marketing</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Technical Writing</span>
+                        <span class="skill-tag">SEO</span>
+                        <span class="skill-tag">Content Creation</span>
+                        <span class="skill-tag">Social Media</span>
+                        <span class="skill-tag">Email Marketing</span>
+                    </div>
+                </div>
+                <div class="skill-category fade-in">
+                    <h3>Tools & Technologies</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Semrush</span>
+                        <span class="skill-tag">Mangools</span>
+                        <span class="skill-tag">ASANA</span>
+                        <span class="skill-tag">Data Analysis</span>
+                        <span class="skill-tag">Project Management</span>
+                    </div>
+                </div>
+                <div class="skill-category fade-in">
+                    <h3>AI Frameworks & Models</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">LangChain</span>
+                        <span class="skill-tag">CrewAI</span>
+                        <span class="skill-tag">LangGraph</span>
+                        <span class="skill-tag">Exa</span>
+                        <span class="skill-tag">Composio</span>
+                        <span class="skill-tag">AutoGen</span>
+                        <span class="skill-tag">LlamaIndex</span>
+                    </div>
+                </div>
+                <div class="skill-category fade-in">
+                    <h3>Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">English</span>
+                        <span class="skill-tag">Bangla</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title fade-in">Generative AI Projects</h2>
+            <div class="projects-grid">
+                <div class="project-item fade-in">
+                    <h3>Fine-Tuning LLMs for Regional Dialect Comprehended Question Answering in Bangla</h3>
+                    <p>Created 12,500-sentence dataset from various Bangla dialects. Achieved 53% BLEU score using ChatGPT-4 and LoRA fine-tuning.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">LLMs</span>
+                        <span class="tech-tag">ChatGPT</span>
+                        <span class="tech-tag">LoRA</span>
+                    </div>
+                </div>
+
+                <div class="project-item fade-in">
+                    <h3>Fine-Tuning LLMs for Sentiment Classification of AI-Related Tweets</h3>
+                    <p>Analyzed 20,000 tweets using advanced prompt engineering. Implemented successful classification using Llama 2.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">LLMs</span>
+                        <span class="tech-tag">Llama2</span>
+                        <span class="tech-tag">Prompt Engineering</span>
+                    </div>
+                </div>
+
+                <div class="project-item fade-in">
+                    <h3>Advanced OCR Post-Processing: Integrating Vision-Language Models</h3>
+                    <p>Developed OCR System With VLM Models for Post Processing for Better Accuracy. Implemented 14VLMs with OCRs for post processing text refinements.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">LVMs</span>
+                        <span class="tech-tag">OCR</span>
+                        <span class="tech-tag">Post Processing</span>
+                    </div>
+                </div>
+
+                <div class="project-item fade-in">
+                    <h3>A Multi-Agent Garage Service Search and Recommendation</h3>
+                    <p>Garage Assistance System, integrating Classical ML with Generative AI to optimize garage services. Used ChatGPT mini, Gemini flash and Perplexity.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">LLMS</span>
+                        <span class="tech-tag">MLs</span>
+                        <span class="tech-tag">Agent</span>
+                    </div>
+                </div>
+
+                <div class="project-item fade-in">
+                    <h3>Turbulence Blur Extraction with LVM</h3>
+                    <p>Extracting Turbulence Blur with LLM gemini, qwen, mistral etc LLM. Used De-noising Method to Remove Blur from the Image.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">LVM</span>
+                        <span class="tech-tag">Gemini</span>
+                        <span class="tech-tag">Qwen</span>
+                        <span class="tech-tag">Mistral</span>
+                        <span class="tech-tag">Agent</span>
+                    </div>
+                </div>
+
+                <div class="project-item fade-in">
+                    <h3>Job Board Agent</h3>
+                    <p>Searching job around 10k websites using AI search Agent tool Exa or Perplexity. Used Perplexity and Exa search agent model for search.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Perplexity</span>
+                        <span class="tech-tag">Exa</span>
+                        <span class="tech-tag">Agent</span>
+                    </div>
+                </div>
+
+                <div class="project-item fade-in">
+                    <h3>TrOCR-VLM: Enhancing Text Extraction from Blurry Images</h3>
+                    <p>For Visually Impaired Users using Pali Gemma, GotOCR, Qwen2-VL-7B-Instruct, Deepsake and Mistral (pixtral) to refine TrOCR outputs. Reducing CER to 0.11 and WER to 0.19.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">LVM</span>
+                        <span class="tech-tag">TrOCR</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="publications">
+        <div class="container">
+            <h2 class="section-title fade-in">Research Publications</h2>
+            <div class="publications-grid">
+                <div class="publication-item fade-in">
+                    <h3>Mixed Color Roses Classification Using Convolutional Neural Network and K-means</h3>
+                    <p><strong>Subject Area:</strong> AI, Machine Learning</p>
+                    <p><strong>Published:</strong> 2023 5th International Conference on Sustainable Technologies for Industry 5.0 (STI 2023)</p>
+                </div>
+
+                <div class="publication-item fade-in">
+                    <h3>LLMs for Evaluation of Code to Find Vulnerabilities</h3>
+                    <p><strong>Subject Area:</strong> AI, Machine Learning, LLM, ChatGPT</p>
+                    <p><strong>Published:</strong> 9th IEEE International Women in Engineering (WIE) Conference on Electrical and Computer Engineering 2023 (IEEE WIECON-ECE 2023)</p>
+                </div>
+
+                <div class="publication-item fade-in">
+                    <h3>Evaluating Machine Learning Model Performance in Predicting Polycystic Ovarian Syndrome</h3>
+                    <p><strong>Subject Area:</strong> AI, Machine Learning</p>
+                    <p><strong>Published:</strong> 9th IEEE International Women in Engineering (WIE) Conference on Electrical and Computer Engineering 2023 (IEEE WIECON-ECE 2023)</p>
+                </div>
+
+                <div class="publication-item fade-in">
+                    <h3>A Student Guidelines Website for Final Year Thesis Using HCI UX Usability</h3>
+                    <p><strong>Subject Area:</strong> AI, Machine Learning, NLP</p>
+                    <p><strong>Published:</strong> 2024 Fourth International Conference on Advances in Electrical, Computing, Communications and Sustainable Technologies (ICAECT 2024)</p>
+                </div>
+
+                <div class="publication-item fade-in">
+                    <h3>A Smart Medical Box for Medical Professionals and Patients</h3>
+                    <p><strong>Subject Area:</strong> IoT</p>
+                    <p><strong>Published:</strong> 9th IEEE International Women in Engineering (WIE) Conference on Electrical and Computer Engineering 2023 (IEEE WIECON-ECE 2024)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="references">
+        <div class="container">
+            <h2 class="section-title fade-in">References</h2>
+            <div class="references-grid">
+                <div class="reference-item fade-in">
+                    <div class="reference-header">
+                        <h3>Dr. Nazib Abdun Nasir</h3>
+                        <div class="reference-title">Assistant Professor, Department of CSE</div>
+                        <div class="reference-title">American International University of Bangladesh</div>
+                    </div>
+                    <div class="reference-contact">
+                        <div class="contact-detail">
+                            <span class="contact-icon">📧</span>
+                            <span>nazibcsedu@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reference-item fade-in">
+                    <div class="reference-header">
+                        <h3>Md Tanzim Reza</h3>
+                        <div class="reference-title">Senior Lecturer, Department of CSE</div>
+                        <div class="reference-title">BRAC University</div>
+                    </div>
+                    <div class="reference-contact">
+                        <div class="contact-detail">
+                            <span class="contact-icon">📧</span>
+                            <span>tanzim.reza@bracu.ac.bd</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reference-item fade-in">
+                    <div class="reference-header">
+                        <h3>Shayan Khanlarbeik</h3>
+                        <div class="reference-title">Co-Founder and Chief Product Officer</div>
+                        <div class="reference-title">Mindgrasp AI</div>
+                    </div>
+                    <div class="reference-contact">
+                        <div class="contact-detail">
+                            <span class="contact-icon">📧</span>
+                            <span>shayank@mindgrasp.ai</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reference-item fade-in">
+                    <div class="reference-header">
+                        <h3>Louie Peters</h3>
+                        <div class="reference-title">CEO and Co-founder</div>
+                        <div class="reference-title">Towards AI</div>
+                    </div>
+                    <div class="reference-contact">
+                        <div class="contact-detail">
+                            <span class="contact-icon">📧</span>
+                            <span>louie@towardsai.net</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reference-item fade-in">
+                    <div class="reference-header">
+                        <h3>Mrs Sumaiya Kabir</h3>
+                        <div class="reference-title">Assistant Professor, Department of CSE</div>
+                        <div class="reference-title">Green University of Bangladesh</div>
+                    </div>
+                    <div class="reference-contact">
+                        <div class="contact-detail">
+                            <span class="contact-icon">📧</span>
+                            <span>sumaiya@cse.green.edu.bd</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reference-item fade-in">
+                    <div class="reference-header">
+                        <h3>Nilotpal Sinha</h3>
+                        <div class="reference-title">Co-Founder and CEO of Graybook AI</div>
+                        <div class="reference-title">Director of AI Engineering, Multiverse Computing</div>
+                    </div>
+                    <div class="reference-contact">
+                        <div class="contact-detail">
+                            <span class="contact-icon">📧</span>
+                            <span>nilotpalsinha@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-social">
+                    <a href="https://github.com/rafi79" target="_blank" class="footer-link">GitHub</a>
+                    <a href="https://kaggle.com/rafi79" target="_blank" class="footer-link">Kaggle</a>
+                    <a href="https://scholar.google.com/citations?user=rafi79" target="_blank" class="footer-link">Google Scholar</a>
+                    <a href="https://linkedin.com/in/mizanur-rahman" target="_blank" class="footer-link">LinkedIn</a>
+                    <a href="https://facebook.com/mr.rafi" target="_blank" class="footer-link">Facebook</a>
+                </div>
+                <div class="footer-info">
+                    <p>&copy; 2025 MD Mizanur Rahman. All rights reserved.</p>
+                    <p>AI Engineer & Content Creator</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add some interactive effects
+        document.querySelectorAll('.experience-item, .project-item, .publication-item, .skill-category, .reference-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.boxShadow = '0 10px 30px rgba(255,255,255,0.1)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Active navigation highlighting
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.background = '';
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.style.background = '#333';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
